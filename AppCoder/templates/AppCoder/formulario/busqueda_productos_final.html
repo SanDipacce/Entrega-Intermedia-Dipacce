@@ -1,0 +1,32 @@
+{% extends "AppCoder/formulario/base.html" %}
+
+{% block cuerpo  %}
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="productos/"> Productos </a></li>
+  <li role="presentation"><a href="empleados/"> Empleados </a></li>
+  <li role="presentation"><a href="proveedores/"> Proveedores </a></li>
+  <li role="presentation" class="active"><a href="busqueda_productos/"> Buscar Productos </a></li>
+</ul>
+    
+    <body>
+        <h1>Busqueda de Productos por Categoria</h1>
+    
+    
+       {%if producto %}      
+         <ul>
+           {% for producto in producto %}
+                <li>{{producto.categoria}} , {{producto.tipo}}, {{producto.marca}}</li>
+           {% endfor %}
+         </ul>
+    
+       {% else %}
+         
+             <h1> No hay Productos con ese criterio </h1> 
+    
+       {% endif %}
+    
+    </body>
+    
+     
+     
+{% endblock %}

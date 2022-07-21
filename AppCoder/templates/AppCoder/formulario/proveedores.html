@@ -1,0 +1,31 @@
+{% extends "AppCoder/formulario/base.html" %}
+
+{% block cuerpo  %}
+
+<ul class="nav nav-pills">
+    <li role="presentation"><a href="productos/"> Productos </a></li>
+    <li role="presentation"><a href="empleados/"> Empleados </a></li>
+    <li role="presentation"class="active"><a href="proveedores/"> Proveedores </a></li>
+    <li role="presentation"><a href="#"> Buscar Productos </a></li>
+  </ul>
+    
+
+    <h1> Formulario - Agregar Proveedores </h1>
+    {% if miFormulario.errors %}
+    <p> estan mal los datos revisar </p>
+    {% endif %}
+    
+    <form action=""  method="POST"> {% csrf_token %}
+    
+          <table>
+    
+             {{ miFormulario.as_table }} 
+          
+          </table>
+    
+         <input type="submit", value ="Enviar">
+         
+     </form> 
+    
+{% endblock %}
+

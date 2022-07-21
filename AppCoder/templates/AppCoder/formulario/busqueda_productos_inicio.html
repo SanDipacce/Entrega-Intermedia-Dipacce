@@ -1,0 +1,26 @@
+{% extends "AppCoder/formulario/base.html" %}
+
+{% block cuerpo  %}
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="productos/"> Productos </a></li>
+  <li role="presentation"><a href="empleados/"> Empleados </a></li>
+  <li role="presentation"><a href="proveedores/"> Proveedores </a></li>
+  <li role="presentation" class="active"><a href="busqueda_productos/"> Buscar Productos </a></li>
+</ul>
+    
+    <body>
+        <h1>Busqueda de Productos por Categoria </h1>
+        {% if busqueda_formulario %}
+          <form action=""  method="GET"> {% csrf_token %}
+                   
+                     {{busqueda_formulario}}
+                   
+                    <input type="submit"  value ="Buscar">
+          </form> 
+        
+        {% endif %}
+
+    </body>
+   
+      
+{% endblock %}
